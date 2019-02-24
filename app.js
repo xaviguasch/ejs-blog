@@ -20,15 +20,13 @@ app.use(bodyParser.urlencoded({
 app.use(express.static("public"));
 
 
-const posts = []
-
-
+let posts = []
 
 app.get('/', function (req, res) {
     res.render('home', {
-        startingContent: homeStartingContent
+        startingContent: homeStartingContent,
+        posts: posts
     })
-    console.log(posts);
 
 })
 
