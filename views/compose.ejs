@@ -3,9 +3,14 @@
 
 <h1>Compose</h1>
 
-<form action="/compose">
-    <input type="text" action="">
-    <button type="sumbit" name="button">Publish</button>
+<form class="form-group" action="/compose" method="POST">
+    <label for="postTitle">Title</label>
+    <input class="form-control" type="text" name="postTitle" autofocus>
+    <br>
+    <label for="textBox">Post</label>
+    <textarea class="form-control" name="textBox" id="" cols="30" rows="5" autofocus></textarea>
+    <br>
+    <button class="btn btn-primary" type="sumbit" name="button">Publish</button>
 </form>
 
 
