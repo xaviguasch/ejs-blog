@@ -53,18 +53,17 @@ app.get('/posts/:postName', function (req, res) {
 
     const requestedTitle = _.lowerCase(req.params.postName)
 
-
-
     posts.forEach((post) => {
         const storedTitle = _.lowerCase(post.title)
+        const storedBody = post.body
 
         if (requestedTitle === storedTitle) {
-            console.log('match found!!!!');
-        } else {
-            console.log(`We do not have any post with the title of ${req.params.postName}`);
+            res.render('post', {
+                title: storedTitle,
+                content: storedBody
+            })
         }
     })
-
 })
 
 
