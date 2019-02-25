@@ -46,8 +46,19 @@ app.get('/compose', function (req, res) {
     res.render('compose')
 })
 
-app.get('/posts/:postname', function (req, res) {
-    console.log(req.params.postname);
+app.get('/posts/:postName', function (req, res) {
+
+    const requestedTitle = req.params.postName
+
+    posts.forEach((post) => {
+        const storedTitle = post.title
+
+        if (requestedTitle === storedTitle) {
+            console.log('match found!!!!');
+        } else {
+            console.log(`We do not have any post with the title of ${req.params.postName}`);
+        }
+    })
 
 })
 
